@@ -60,7 +60,7 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900">Pulse Gym</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Vitalize Fitness</h2>
           <h3 className="mt-2 text-xl font-semibold text-gray-700">Admin Login</h3>
         </div>
       </div>

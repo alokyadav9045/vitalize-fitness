@@ -51,7 +51,8 @@ export async function POST(request: NextRequest) {
       emergencyContact,
       membershipType,
       startDate,
-      endDate
+      endDate,
+      whatsappOptIn
     } = body
 
     // Validate required fields
@@ -81,7 +82,8 @@ export async function POST(request: NextRequest) {
       emergencyContact,
       membershipType,
       startDate: new Date(startDate),
-      endDate: new Date(endDate)
+      endDate: new Date(endDate),
+      whatsappOptIn: !!whatsappOptIn
     })
 
     await member.save()
@@ -115,7 +117,8 @@ export async function PUT(request: NextRequest) {
       emergencyContact,
       membershipType,
       startDate,
-      endDate
+      endDate,
+      whatsappOptIn
     } = body
 
     if (!id) {
@@ -146,7 +149,8 @@ export async function PUT(request: NextRequest) {
         emergencyContact,
         membershipType,
         startDate: startDate ? new Date(startDate) : undefined,
-        endDate: endDate ? new Date(endDate) : undefined
+        endDate: endDate ? new Date(endDate) : undefined,
+        whatsappOptIn: whatsappOptIn !== undefined ? !!whatsappOptIn : undefined
       },
       { new: true, runValidators: true }
     )

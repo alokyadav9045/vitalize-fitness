@@ -1,5 +1,5 @@
 {
-  "name": "pulse-gym-management",
+  "name": "vitalize-fitness",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -13,7 +13,9 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "seed": "tsx scripts/seed.js"
+    "seed": "tsx scripts/seed.js",
+    "send-renewals": "tsx scripts/renewalReminders.js",
+    "start-scheduler": "node scripts/scheduler.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",

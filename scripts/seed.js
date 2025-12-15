@@ -153,7 +153,7 @@ async function seedDatabase() {
     const trainers = [
       {
         name: 'Michael Johnson',
-        email: 'michael@pulsegym.com',
+        email: 'michael@vitalizefitness.com',
         phone: '+91-9876543220',
         specialization: ['Personal Training', 'Strength Training', 'Nutrition'],
         experience: 8,
@@ -164,7 +164,7 @@ async function seedDatabase() {
       },
       {
         name: 'Priya Sharma',
-        email: 'priya@pulsegym.com',
+        email: 'priya@vitalizefitness.com',
         phone: '+91-9876543221',
         specialization: ['Yoga', 'Pilates', 'Meditation'],
         experience: 6,
@@ -175,7 +175,7 @@ async function seedDatabase() {
       },
       {
         name: 'David Rodriguez',
-        email: 'david@pulsegym.com',
+        email: 'david@vitalizefitness.com',
         phone: '+91-9876543222',
         specialization: ['Cardio Training', 'HIIT', 'Group Fitness'],
         experience: 10,
@@ -186,7 +186,7 @@ async function seedDatabase() {
       },
       {
         name: 'Lisa Chen',
-        email: 'lisa@pulsegym.com',
+        email: 'lisa@vitalizefitness.com',
         phone: '+91-9876543223',
         specialization: ['CrossFit', 'Functional Training', 'Sports Performance'],
         experience: 7,
@@ -205,7 +205,7 @@ async function seedDatabase() {
       {
         name: 'John Doe',
         role: 'Premium Member',
-        content: 'Pulse Gym has transformed my fitness journey! The trainers are incredibly knowledgeable and the facilities are top-notch. I\'ve lost 20kg and gained so much confidence.',
+        content: 'Vitalize Fitness has transformed my fitness journey! The trainers are incredibly knowledgeable and the facilities are top-notch. I\'ve lost 20kg and gained so much confidence.',
         rating: 5,
         image: '/testimonials/john-doe.jpg'
       },
@@ -415,11 +415,11 @@ async function seedDatabase() {
 
     // Seed Gym Settings
     const gymSettings = {
-      gymName: 'Pulse Gym',
+      gymName: 'Vitalize Fitness',
       address: '123 Fitness Street, Health City, HC 12345',
       phone: '+91 98765 43210',
-      email: 'info@pulsegym.com',
-      website: 'https://pulsegym.com',
+      email: 'info@vitalizefitness.com',
+      website: 'https://vitalizefitness.com',
       openingHours: {
         monday: { open: '06:00', close: '22:00' },
         tuesday: { open: '06:00', close: '22:00' },
@@ -437,6 +437,7 @@ async function seedDatabase() {
       notifications: {
         emailReminders: true,
         smsReminders: false,
+        whatsappReminders: false,
         paymentNotifications: true,
         attendanceAlerts: true
       },

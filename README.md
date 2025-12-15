@@ -1,4 +1,4 @@
-# Pulse Gym Management System
+# Vitalize Fitness Management System
 
 A comprehensive web application for managing gym operations, built with Next.js, TypeScript, and MongoDB.
 
@@ -46,7 +46,7 @@ A comprehensive web application for managing gym operations, built with Next.js,
 
 ```bash
 git clone <repository-url>
-cd pulse-gym-management
+cd vitalize-fitness
 ```
 
 1. Install dependencies:
@@ -60,7 +60,7 @@ npm install
 Create a `.env.local` file in the root directory:
 
 ```env
-MONGODB_URI=mongodb://localhost:27017/pulse-gym
+MONGODB_URI=mongodb://localhost:27017/vitalize-fitness
 JWT_SECRET=your-super-secret-jwt-key-here
 CLOUDINARY_CLOUD_NAME=your-cloud-name
 CLOUDINARY_API_KEY=your-api-key
@@ -162,6 +162,12 @@ src/
 
 - Use MongoDB Atlas for production
 - Update MONGODB_URI in environment variables
+
+### Notifications
+
+- WhatsApp notifications are available via Twilio. Set `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_WHATSAPP_FROM` in your environment.
+- Opt-in is per-member (toggle in Admin → Members).
+- Run one-off renewal reminders with `npm run send-renewals` or schedule daily; set `RENEWAL_DAYS` to change the lead time (default 7).
 
 ## Contributing
 

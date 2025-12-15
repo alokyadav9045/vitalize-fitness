@@ -55,6 +55,11 @@ const memberSchema = new mongoose.Schema({
   profileImage: {
     type: String
   }
+  ,
+  whatsappOptIn: {
+    type: Boolean,
+    default: false
+  }
 }, {
   timestamps: true
 })

@@ -56,9 +56,7 @@ export default function Hero() {
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
             <span className="block">Welcome to</span>
-            <span className="block text-primary">Pulse Gym</span>
-          </h1>
-
+            <span className="block text-primary">Vitalize Fitness</span>
           <div className="text-2xl sm:text-4xl lg:text-5xl font-light mb-8 h-16 flex items-center justify-center">
             <span>{currentText}</span>
             <span className="animate-pulse">|</span>

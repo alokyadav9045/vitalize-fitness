@@ -102,7 +102,29 @@ export async function POST(request: NextRequest) {
     await fee.save()
 
     // Populate member info
-    await fee.populate('memberId', 'name memberId email')
+    await fee.populate('memberId', 'name memberId email phone')
+
+    // Send notifications if enabled
+    try {
+      const GymSettings = (await import('@/lib/models/GymSettings')).default
+      const settings = await GymSettings.findOne()
+
+      if (settings?.notifications?.whatsappReminders && fee.memberId?.phone) {
+        const notifications = await import('@/lib/notifications')
+        // Ensure phone has country code and is in E.164 format
+        const phone = fee.memberId.phone
+        const token = notifications.createUnsubscribeToken(fee.memberId._id.toString())
+        const base = process.env.NEXT_PUBLIC_BASE_URL || process.env.BASE_URL || ''
+        const unsubscribeLink = token ? `${base}/api/unsubscribe/whatsapp?memberId=${fee.memberId._id}&token=${token}` : ''
+        const message = `Hi ${fee.memberId.name}, we received your payment of ₹${fee.amount}. Thank you for choosing Vitalize Fitness! ${unsubscribeLink ? `Unsubscribe: ${unsubscribeLink}` : ''}`
+        const result = await notifications.sendWhatsApp(phone, message)
+        if (!result.success) {
+          console.error('WhatsApp notification failed:', result.message)
+        }
+      }
+    } catch (err) {
+      console.error('Notification error:', err)
+    }
 
     return NextResponse.json({
       success: true,

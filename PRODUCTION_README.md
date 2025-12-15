@@ -1,4 +1,4 @@
-# Pulse Gym Management System - Production Ready
+# Vitalize Fitness Management System - Production Ready
 
 ## 🎉 Project Status: PRODUCTION READY
 
@@ -24,7 +24,7 @@ This Next.js 14 application is fully configured and tested for production deploy
 
 ```bash
 git clone [your-repo-url]
-cd "pulse gym"
+cd "vitalize-fitness"
 npm install
 ```
 
@@ -193,7 +193,12 @@ npm run seed         # Seed database with sample data
 ### Real-time & Communication
 
 - Server-Sent Events (SSE) - Built-in to Node.js
-- `twilio` 4.19.0 - SMS notifications (optional)
+- `twilio` 4.19.0 - SMS & WhatsApp notifications (optional)
+
+**Notifications**
+
+- WhatsApp notifications: configure `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_WHATSAPP_FROM` in your environment. Opt-in can be set per member in the admin UI.
+- Run one-off renewal reminders with `npm run send-renewals` or schedule it daily (uses `RENEWAL_DAYS` env var, default 7).
 
 ### Testing
 

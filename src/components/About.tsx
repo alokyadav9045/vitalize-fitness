@@ -27,7 +27,7 @@ export default function About() {
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop"
-                alt="Pulse Gym Interior"
+                alt="Vitalize Fitness Interior"
                 fill
                 className="object-cover"
               />
@@ -49,13 +49,13 @@ export default function About() {
           >
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                About <span className="text-primary">Pulse Gym</span>
+                About <span className="text-primary">Vitalize Fitness</span>
               </h2>
               <div className="w-20 h-1 bg-primary rounded-full mb-6"></div>
             </div>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              At Pulse Gym, we believe that fitness is not just about working out—it&apos;s about transforming your entire lifestyle. Founded over a decade ago, we&apos;ve been helping individuals achieve their fitness goals through personalized training, cutting-edge equipment, and a supportive community.
+              At Vitalize Fitness, we believe that fitness is not just about working out—it&apos;s about transforming your entire lifestyle. Founded over a decade ago, we&apos;ve been helping individuals achieve their fitness goals through personalized training, cutting-edge equipment, and a supportive community.
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed">

@@ -124,7 +124,7 @@ export async function POST() {
     const trainers = [
       {
         name: 'Michael Johnson',
-        email: 'michael@pulsegym.com',
+        email: 'michael@vitalizefitness.com',
         phone: '+91-9876543220',
         specialization: ['Personal Training', 'Strength Training', 'Nutrition'],
         experience: 8,
@@ -135,7 +135,7 @@ export async function POST() {
       },
       {
         name: 'Priya Sharma',
-        email: 'priya@pulsegym.com',
+        email: 'priya@vitalizefitness.com',
         phone: '+91-9876543221',
         specialization: ['Yoga', 'Pilates', 'Meditation'],
         experience: 6,
@@ -146,7 +146,7 @@ export async function POST() {
       },
       {
         name: 'David Rodriguez',
-        email: 'david@pulsegym.com',
+        email: 'david@vitalizefitness.com',
         phone: '+91-9876543222',
         specialization: ['Cardio Training', 'HIIT', 'Group Fitness'],
         experience: 10,
@@ -157,7 +157,7 @@ export async function POST() {
       },
       {
         name: 'Lisa Chen',
-        email: 'lisa@pulsegym.com',
+        email: 'lisa@vitalizefitness.com',
         phone: '+91-9876543223',
         specialization: ['CrossFit', 'Functional Training', 'Sports Performance'],
         experience: 7,
@@ -176,7 +176,7 @@ export async function POST() {
       {
         name: 'John Doe',
         role: 'Premium Member',
-        content: 'Pulse Gym has transformed my fitness journey! The trainers are incredibly knowledgeable and the facilities are top-notch. I\'ve lost 20kg and gained so much confidence.',
+        content: 'Vitalize Fitness has transformed my fitness journey! The trainers are incredibly knowledgeable and the facilities are top-notch. I\'ve lost 20kg and gained so much confidence.',
         rating: 5,
         image: '/testimonials/john-doe.jpg'
       },

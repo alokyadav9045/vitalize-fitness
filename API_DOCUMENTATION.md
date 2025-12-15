@@ -1,4 +1,4 @@
-# Pulse Gym Management System - API Documentation
+# Vitalize Fitness Management System - API Documentation
 
 ## Overview
 

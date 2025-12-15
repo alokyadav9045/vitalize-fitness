@@ -30,6 +30,7 @@ interface Member {
   startDate: string
   endDate: string
   createdAt: string
+  whatsappOptIn?: boolean
 }
 
 export default function Members() {
@@ -56,7 +57,8 @@ export default function Members() {
     },
     membershipType: 'Basic',
     startDate: '',
-    endDate: ''
+    endDate: '',
+    whatsappOptIn: false
   })
   const router = useRouter()
 
@@ -189,7 +191,8 @@ export default function Members() {
       },
       membershipType: member.membershipType,
       startDate: member.startDate,
-      endDate: member.endDate
+      endDate: member.endDate,
+      whatsappOptIn: !!member.whatsappOptIn
     })
     setShowAddModal(true)
   }
@@ -608,6 +611,18 @@ export default function Members() {
                       required
                     />
                   </div>
+                </div>
+
+                <div className="mt-4">
+                  <label className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      checked={formData.whatsappOptIn}
+                      onChange={(e) => setFormData({...formData, whatsappOptIn: e.target.checked})}
+                      className="h-4 w-4"
+                    />
+                    <span className="text-sm text-gray-700">Opt-in to WhatsApp notifications</span>
+                  </label>
                 </div>
 
                 <div className="mt-6 flex justify-end space-x-2">

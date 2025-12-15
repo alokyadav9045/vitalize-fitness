@@ -1,4 +1,4 @@
-# Pulse Gym - Production Deployment Guide
+# Vitalize Fitness - Production Deployment Guide
 
 ## Pre-Deployment Checklist
 
@@ -16,7 +16,7 @@
 Set these environment variables in your Vercel project settings:
 
 ```env
-MONGODB_URI=mongodb+srv://[username]:[password]@[cluster].mongodb.net/pulse-gym?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://[username]:[password]@[cluster].mongodb.net/vitalize-fitness?retryWrites=true&w=majority
 JWT_SECRET=[generate-a-strong-32-character-random-string]
 CLOUDINARY_CLOUD_NAME=[your-cloud-name]
 CLOUDINARY_API_KEY=[your-api-key]

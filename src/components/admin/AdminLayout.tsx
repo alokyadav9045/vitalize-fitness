@@ -72,7 +72,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               {sidebarCollapsed ? <ChevronRight className="w-6 h-6" /> : <ChevronLeft className="w-6 h-6" />}
             </button>
             <Link href="/admin/dashboard" className="text-xl font-bold">
-              Pulse Gym Admin
+              Vitalize Fitness Admin
             </Link>
           </div>
           <div className="flex items-center">

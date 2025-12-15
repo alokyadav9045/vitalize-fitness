@@ -70,7 +70,7 @@ export default function Gallery() {
           </h2>
           <div className="w-20 h-1 bg-primary rounded-full mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Take a virtual tour of our state-of-the-art facilities and see why members choose Pulse Gym.
+            Take a virtual tour of our state-of-the-art facilities and see why members choose Vitalize Fitness.
           </p>
         </motion.div>
 

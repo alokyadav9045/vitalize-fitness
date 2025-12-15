@@ -12,7 +12,7 @@ export async function GET() {
     if (!settings) {
       // Return default settings if none exist
       const defaultSettings = new GymSettings({
-        gymName: 'Pulse Gym',
+        gymName: 'Vitalize Fitness',
         address: '',
         phone: '',
         email: '',
@@ -34,6 +34,7 @@ export async function GET() {
         notifications: {
           emailReminders: true,
           smsReminders: false,
+          whatsappReminders: false,
           paymentNotifications: true,
           attendanceAlerts: true
         },

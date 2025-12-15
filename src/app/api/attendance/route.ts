@@ -130,6 +130,23 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString()
     })
 
+    // Send WhatsApp thank-you if enabled and member opted in
+    try {
+      const GymSettings = (await import('@/lib/models/GymSettings')).default
+      const settings = await GymSettings.findOne()
+      if (settings?.notifications?.attendanceAlerts && attendance.memberId?.phone && attendance.memberId?.whatsappOptIn) {
+        const notifications = await import('@/lib/notifications')
+        const token = notifications.createUnsubscribeToken(attendance.memberId._id.toString())
+        const base = process.env.NEXT_PUBLIC_BASE_URL || process.env.BASE_URL || ''
+        const unsubscribeLink = token ? `${base}/api/unsubscribe/whatsapp?memberId=${attendance.memberId._id}&token=${token}` : ''
+        const msg = `Hi ${attendance.memberId.name}, thanks for checking in at Vitalize Fitness. ${unsubscribeLink ? `Unsubscribe: ${unsubscribeLink}` : ''}`
+        const result = await notifications.sendWhatsApp(attendance.memberId.phone, msg)
+        if (!result.success) console.error('Attendance WhatsApp failed:', result.message)
+      }
+    } catch (err) {
+      console.error('Attendance notification error:', err)
+    }
+
     return NextResponse.json({
       success: true,
       attendance

@@ -10,7 +10,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-primary">Pulse Gym</h3>
+            <div className="flex items-center gap-3">
+              <img src="/Vitalize Fitness.png" alt="Vitalize Fitness" className="h-10 w-auto" />
+              <h3 className="text-2xl font-bold text-primary">Vitalize Fitness</h3>
+            </div>
             <p className="text-gray-400 leading-relaxed">
               Transform your body, mind, and lifestyle with our expert trainers and state-of-the-art facilities.
             </p>
@@ -101,7 +104,7 @@ export default function Footer() {
               <p>123 Fitness Street</p>
               <p>Downtown City, ST 12345</p>
               <p>+1 (555) 123-4567</p>
-              <p>info@pulsegym.com</p>
+              <p>info@vitalizefitness.com</p>
             </div>
             <div className="text-sm text-gray-400">
               <p>Mon - Fri: 5:00 AM - 11:00 PM</p>
@@ -111,7 +114,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} Pulse Gym. All rights reserved.</p>
+          <p>&copy; {currentYear} Vitalize Fitness. All rights reserved.</p>
         </div>
       </div>
     </footer>

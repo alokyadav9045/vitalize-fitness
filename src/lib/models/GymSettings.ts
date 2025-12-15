@@ -4,7 +4,7 @@ const gymSettingsSchema = new mongoose.Schema({
   gymName: {
     type: String,
     required: true,
-    default: 'Pulse Gym'
+    default: 'Vitalize Fitness'
   },
   address: {
     type: String,
@@ -59,6 +59,7 @@ const gymSettingsSchema = new mongoose.Schema({
   notifications: {
     emailReminders: { type: Boolean, default: true },
     smsReminders: { type: Boolean, default: false },
+    whatsappReminders: { type: Boolean, default: false },
     paymentNotifications: { type: Boolean, default: true },
     attendanceAlerts: { type: Boolean, default: true }
   },

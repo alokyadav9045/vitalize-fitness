@@ -6,8 +6,8 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Pulse Gym Management System',
-  description: 'Comprehensive gym management system for Pulse Gym',
+  title: 'Vitalize Fitness Management System',
+  description: 'Comprehensive gym management system for Vitalize Fitness',
 }
 
 export default function RootLayout({

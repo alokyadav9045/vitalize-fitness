@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     const uploadPromise = new Promise((resolve, reject) => {
       const stream = cloudinary.uploader.upload_stream(
         {
-          folder: `pulse-gym/${type}`,
+          folder: `vitalize-fitness/${type}`,
           public_id: `${Date.now()}-${file.name.replace(/\.[^/.]+$/, '')}`,
           resource_type: 'auto',
           transformation: type === 'gallery' ? [

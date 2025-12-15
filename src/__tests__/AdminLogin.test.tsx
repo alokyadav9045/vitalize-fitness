@@ -19,7 +19,7 @@ describe('AdminLogin', () => {
   it('should render login form', () => {
     render(<AdminLogin />)
 
-    expect(screen.getByText('Pulse Gym')).toBeInTheDocument()
+    expect(screen.getByText('Vitalize Fitness')).toBeInTheDocument()
     expect(screen.getByText('Admin Login')).toBeInTheDocument()
     expect(screen.getByLabelText(/username/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument()
