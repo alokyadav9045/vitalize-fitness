@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, LogIn } from 'lucide-react'
 
 const navItems = [
@@ -55,7 +56,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-3">
-              <img src="/Vitalize Fitness.png" alt="Vitalize Fitness" className="logo" />
+              <Image src="/Vitalize Fitness.png" alt="Vitalize Fitness" width={36} height={36} className="logo" />
             </Link>
           </div>
 

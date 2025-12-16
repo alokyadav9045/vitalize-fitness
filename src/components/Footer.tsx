@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react'
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/Vitalize Fitness.png" alt="Vitalize Fitness" className="logo" />
+              <Image src="/Vitalize Fitness.png" alt="Vitalize Fitness" width={44} height={44} className="logo" />
               <h3 className="text-2xl font-bold text-primary">Vitalize Fitness</h3>
             </div>
             <p className="text-gray-400 leading-relaxed">
