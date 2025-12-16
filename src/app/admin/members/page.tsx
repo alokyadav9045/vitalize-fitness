@@ -163,7 +163,8 @@ export default function Members() {
           },
           membershipType: 'Basic',
           startDate: '',
-          endDate: ''
+          endDate: '',
+          whatsappOptIn: false
         })
       } else {
         console.error('Failed to save member:', data.message)
@@ -645,7 +646,8 @@ export default function Members() {
                         },
                         membershipType: 'Basic',
                         startDate: '',
-                        endDate: ''
+                        endDate: '',
+                        whatsappOptIn: false
                       })
                     }}
                     className="px-4 py-2 text-gray-600 hover:text-gray-800"

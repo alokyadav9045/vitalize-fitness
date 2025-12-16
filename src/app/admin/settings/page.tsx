@@ -37,6 +37,7 @@ interface GymSettings {
   notifications: {
     emailReminders: boolean
     smsReminders: boolean
+    whatsappReminders: boolean
     paymentNotifications: boolean
     attendanceAlerts: boolean
   }
