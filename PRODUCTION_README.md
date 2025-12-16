@@ -38,11 +38,13 @@ cp .env.example .env.local
 
 **Required Variables:**
 
-- `MONGODB_URI` - MongoDB Atlas connection string
+- `MONGODB_URI` - MongoDB Atlas connection string (required in production)
 - `JWT_SECRET` - Strong random 32+ character string
 - `CLOUDINARY_CLOUD_NAME` - From your Cloudinary dashboard
 - `CLOUDINARY_API_KEY` - From your Cloudinary dashboard
 - `CLOUDINARY_API_SECRET` - From your Cloudinary dashboard
+
+> Tip: Use `npm run check-env` to verify required production env vars are set before deploying. This script also runs automatically before `npm run build` in CI and Vercel builds.
 
 ### 3. Test Locally
 

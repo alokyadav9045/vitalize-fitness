@@ -14,11 +14,12 @@ if (!cached) {
 }
 
 async function dbConnect() {
-  const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/vitalize-fitness'
-
-  if (!MONGODB_URI) {
-    throw new Error('Please define the MONGODB_URI environment variable inside .env.local')
+  // In production require an explicit MONGODB_URI; in development/tests a local default is allowed
+  if (process.env.NODE_ENV === 'production' && !process.env.MONGODB_URI) {
+    throw new Error('MONGODB_URI is required in production. Set the environment variable in your deployment (eg Vercel).')
   }
+
+  const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/vitalize-fitness'
 
   if (cached.conn) {
     return cached.conn

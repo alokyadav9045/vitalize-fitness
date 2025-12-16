@@ -9,10 +9,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "node scripts/checkEnv.js",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
+    "check-env": "node scripts/checkEnv.js",
     "seed": "tsx scripts/seed.js",
     "send-renewals": "tsx scripts/renewalReminders.js",
     "start-scheduler": "node scripts/scheduler.js"

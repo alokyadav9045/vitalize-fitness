@@ -9,6 +9,10 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 })
 
+function cloudinaryConfigured() {
+  return Boolean(process.env.CLOUDINARY_CLOUD_NAME && process.env.CLOUDINARY_API_KEY && process.env.CLOUDINARY_API_SECRET)
+}
+
 // Helper function to convert buffer to readable stream
 function bufferToStream(buffer: Buffer) {
   const readable = new Readable()
@@ -19,6 +23,10 @@ function bufferToStream(buffer: Buffer) {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!cloudinaryConfigured()) {
+      return NextResponse.json({ success: false, message: 'Cloudinary not configured on server' }, { status: 500 })
+    }
+
     const formData = await request.formData()
     const file = formData.get('file') as File
     const type = formData.get('type') as string // 'gallery', 'testimonial', 'trainer', 'partner'
