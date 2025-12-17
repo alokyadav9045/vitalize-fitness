@@ -476,7 +476,7 @@ export default function Gallery() {
               <div className="space-y-6">
                 {/* Image Preview */}
                 <div className="flex justify-center">
-                  <div className="w-full max-w-md h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <div className="w-full max-w-md h-40 sm:h-64 bg-gray-100 rounded-lg flex items-center justify-center">
                     <ImageIcon className="w-16 h-16 text-gray-400" />
                   </div>
                 </div>

@@ -15,7 +15,8 @@ export async function GET(request: NextRequest) {
       query = {
         $or: [
           { name: { $regex: search, $options: 'i' } },
-          { content: { $regex: search, $options: 'i' } }
+          { content: { $regex: search, $options: 'i' } },
+          { message: { $regex: search, $options: 'i' } }
         ]
       }
     }
@@ -46,16 +47,21 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const {
       name,
+      role,
       content,
+      message,
       rating,
       image,
       isActive
     } = body
 
+    // Support both 'message' and 'content' from clients
+    const testimonialMessage = content ?? message
+
     // Validate required fields
-    if (!name || !content || !rating) {
+    if (!name || !role || !testimonialMessage || !rating) {
       return NextResponse.json(
-        { success: false, message: 'Missing required fields' },
+        { success: false, message: 'Missing required fields (name, role, message, rating)' },
         { status: 400 }
       )
     }
@@ -70,7 +76,8 @@ export async function POST(request: NextRequest) {
 
     const testimonial = new Testimonial({
       name,
-      content,
+      role,
+      content: testimonialMessage,
       rating,
       image,
       isActive: isActive ?? true
@@ -99,7 +106,9 @@ export async function PUT(request: NextRequest) {
     const {
       id,
       name,
+      role,
       content,
+      message,
       rating,
       image,
       isActive
@@ -111,6 +120,9 @@ export async function PUT(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Support both 'message' and 'content'
+    const testimonialMessage = content ?? message
 
     // Validate rating if provided
     if (rating && (rating < 1 || rating > 5)) {
@@ -124,7 +136,8 @@ export async function PUT(request: NextRequest) {
       id,
       {
         name,
-        content,
+        role,
+        content: testimonialMessage,
         rating,
         image,
         isActive

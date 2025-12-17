@@ -134,7 +134,7 @@ export default function Gallery() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative w-full h-64 xs:h-72 sm:h-96 md:h-[480px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
+              className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
               {failedImages[currentImage._id] ? (
                 // Show a local fallback if the optimization or fetch failed
                 <Image
@@ -185,7 +185,7 @@ export default function Gallery() {
             </motion.div>
 
             {/* Slide Indicators */}
-            <div className="flex justify-center items-center gap-2 mt-6 sm:mt-8">
+            <div className="flex justify-center items-center gap-2 mt-6 sm:mt-8 overflow-x-auto">
               {filteredImages.map((_, index) => (
                 <button
                   key={index}
