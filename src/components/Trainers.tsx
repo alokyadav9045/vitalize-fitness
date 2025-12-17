@@ -5,7 +5,17 @@ import Image from 'next/image'
 import { Facebook, Twitter, Instagram } from 'lucide-react'
 import { useState } from 'react'
 
-const trainers = [
+export interface Trainer {
+  id: number
+  name: string
+  specialty: string
+  experience: string
+  image: string
+  bio: string
+  social: { facebook: string; twitter: string; instagram: string }
+}
+
+const defaultTrainers: Trainer[] = [
   {
     id: 1,
     name: 'Sarah Johnson',
@@ -60,7 +70,8 @@ const trainers = [
   }
 ]
 
-export default function Trainers() {
+export default function Trainers({ trainersData }: { trainersData?: Trainer[] }) {
+  const trainers = trainersData ?? defaultTrainers
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({})
 
   const handleImageError = (id: number) => {
@@ -85,7 +96,7 @@ export default function Trainers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {trainers.map((trainer, index) => (
             <motion.div
               key={trainer.id}
@@ -95,7 +106,7 @@ export default function Trainers() {
               viewport={{ once: true }}
               className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden">
                 <Image
                   src={failedImages[trainer.id] ? '/main.jpg' : trainer.image}
                   alt={trainer.name}
@@ -107,13 +118,13 @@ export default function Trainers() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex justify-center space-x-4">
-                    <a href={trainer.social.facebook} className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
+                    <a href={trainer.social?.facebook ?? '#'} className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
                       <Facebook className="w-4 h-4" />
                     </a>
-                    <a href={trainer.social.twitter} className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
+                    <a href={trainer.social?.twitter ?? '#'} className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
                       <Twitter className="w-4 h-4" />
                     </a>
-                    <a href={trainer.social.instagram} className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
+                    <a href={trainer.social?.instagram ?? '#'} className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
                       <Instagram className="w-4 h-4" />
                     </a>
                   </div>

@@ -57,9 +57,9 @@ export async function POST(request: NextRequest) {
     } = body
 
     // Validate required fields
-    if (!name || !bio || !specializations || specializations.length === 0) {
+    if (!name || !bio || !specializations || specializations.length === 0 || !body.email || !body.phone) {
       return NextResponse.json(
-        { success: false, message: 'Missing required fields' },
+        { success: false, message: 'Missing required fields (name, bio, email, phone, specializations)' },
         { status: 400 }
       )
     }
