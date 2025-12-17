@@ -134,7 +134,7 @@ export default function AdminDashboard() {
 
   return (
     <AdminLayout>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Connection Status */}
         <div className="mb-4 sm:mb-6 flex items-center justify-between px-0 sm:px-0">
           <div className="flex items-center space-x-2 text-xs sm:text-sm">
